@@ -1,6 +1,326 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<head><!DOCTYPE html>
+<html lang="en-US">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRS Metal Sdn.Bhd. – Roller Shutter, Collapsible Gates, Metal Doors and Iron Works</title>
+    <link rel="icon" href="https://crsmetalsdnbhd.com/wp-content/uploads/2023/07/cropped-websiteLogo-1-32x32.png" sizes="32x32">
+    <style>
+        :root {
+            --primary: #062A60;
+            --secondary: #EB7100;
+            --light-color: #FFFFFF;
+            --heading-color: #2F2F2F;
+            --foreground: #6A6A6A;
+            --light-shade: #F4F7FF;
+        }
+        body {
+            margin: 0;
+            font-family: 'Public Sans', sans-serif;
+            color: var(--foreground);
+            background-color: var(--light-color);
+            line-height: 1.5;
+        }
+        a { text-decoration: none; color: inherit; }
+        header { background: var(--light-color); border-bottom: 1px solid #ddd; }
+        
+        /* Top Bar */
+        .top-bar { background: var(--primary); color: var(--light-color); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 14px; }
+        .top-bar-left { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
+        .top-bar-item { display: flex; align-items: center; gap: 8px; color: var(--light-color); }
+        .top-bar-item svg { width: 16px; height: 16px; fill: #EB7100; }
+        .top-bar a { color: var(--light-color); }
+        .social-icons { display: flex; gap: 15px; align-items: center; }
+        .social-icons img { width: 22px; height: 22px; transition: opacity 0.2s; }
+        .social-icons img:hover { opacity: 0.8; }
+
+        /* Main Header */
+        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; max-width: 1180px; margin: 0 auto; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { width: 70px; height: auto; }
+        .logo-area h1 { font-size: 24px; color: var(--primary); margin: 0; font-weight: 800; }
+        .btn-quote { background: var(--secondary); color: var(--light-color); padding: 15px 30px; font-weight: 600; border-radius: 4px; display: inline-block; }
+        .btn-quote:hover { opacity: 0.9; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(6,42,96,0.85), rgba(6,42,96,0.85)), url('https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg') center/cover no-repeat; color: var(--light-color); padding: 80px 20px; text-align: left; }
+        .hero-content { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .hero h1 { font-size: 42px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
+        .hero h2 { font-size: 20px; font-weight: 400; margin-bottom: 30px; }
+        
+        /* Services / Features Grid (With Orange Tone Filter) */
+        .services-preview { background: var(--light-shade); padding: 60px 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1180px; margin: 0 auto; }
+        .card { background: var(--light-color); border-bottom: 2px solid var(--secondary); padding: 30px; box-shadow: 0 6px 9px rgba(0,0,0,0.1); }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            /* 完美统一的橙色基调滤镜 */
+            filter: sepia(90%) hue-rotate(320deg) saturate(350%) brightness(95%);
+            transition: filter 0.3s ease;
+        }
+        .card img:hover {
+            filter: sepia(50%) hue-rotate(320deg) saturate(250%) brightness(100%);
+        }
+        .card h4 { font-size: 22px; color: var(--heading-color); margin-top: 0; }
+
+        /* About Section */
+        .about-section { padding: 80px 20px; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-section img { width: 100%; height: auto; border-radius: 4px; }
+        .about-section h2 { color: var(--primary); font-size: 32px; margin-top: 0; }
+
+        /* Services Grid Section (3 columns) */
+        .services-full { padding: 80px 20px; max-width: 1180px; margin: 0 auto; text-align: center; }
+        .services-full h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 40px; }
+        .service-item-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left; }
+        .service-box { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .service-box img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .service-box-content { padding: 25px; }
+        .service-box-content h4 { color: var(--primary); font-size: 20px; margin-top: 0; }
+
+        /* Projects Carousel Section */
+        .projects-carousel-section { padding: 80px 20px; background: #fff; text-align: center; }
+        .projects-carousel-section h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 15px; }
+        .projects-intro { max-width: 1180px; margin: 0 auto 40px auto; color: var(--foreground); font-size: 16px; line-height: 1.6; text-align: left; }
+        
+        .carousel-container { max-width: 1180px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-slide { min-width: 100%; box-sizing: border-box; }
+        .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(6,42,96,0.7); color: white; border: none; padding: 15px; cursor: pointer; font-size: 20px; border-radius: 4px; z-index: 10; }
+        .carousel-btn:hover { background: var(--secondary); }
+        .carousel-prev { left: 15px; }
+        .carousel-next { right: 15px; }
+
+        /* Footer */
+        footer { background: var(--primary); color: var(--light-color); padding: 60px 20px 20px; }
+        .footer-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-grid h3, .footer-grid h4 { color: var(--light-color); text-transform: uppercase; }
+        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 14px; }
+
+        @media(max-width: 900px) {
+            .service-item-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(max-width: 768px) {
+            .about-section { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            .service-item-grid { grid-template-columns: 1fr; }
+            .carousel-slide img { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+              <span class="top-bar-item">
+                <!-- 嵌入式高清晰 Email 图标 -->
+                <svg viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM48 96h416c8.822 0 16 7.178 16 16v10.751L256 268.751 32 122.751V112c0-8.822 7.178-16 16-16zm416 320H48c-8.822 0-16-7.178-16-16V162.249l220.578 141.249a16 16 0 0 0 16.844 0L480 162.249V400c0 8.822-7.178 16-16 16z"/></svg>
+                <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a>
+              </span>
+              <span class="top-bar-item">
+                <!-- 嵌入式高清晰 Phone 图标 -->
+                <svg viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 139.6-175.6 175.6l-49.6-60.6c-6.8-8.3-18.3-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c264.2 0 464-199.8 464-464 0-11.3-7.8-20.9-18.6-23.4z"/></svg>
+                <a href="tel:0193732055">019-373 2055</a>
+              </span>
+            </div>
+            <div class="social-icons">
+              <a href="https://wa.me/60193732055" target="_blank" title="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+              </a>
+              <a href="https://facebook.com" target="_blank" title="Facebook">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
+              </a>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="logo-area">
+                <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/07/cropped-websiteLogo-1.png" alt="CRS Metal Logo">
+                <h1>CRS Metal Sdn.Bhd.</h1>
+            </div>
+            <div>
+                <a href="https://wa.me/60193732055" class="btn-quote">GET A QUOTE</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with ISO Photo (Borderless) -->
+        <section class="hero">
+            <div class="hero-content">
+                <div style="flex: 1; min-width: 280px;">
+                    <h1>ISO Certified Solutions: Your Trusted Security Experts!</h1>
+                    <h2><strong>CRS : Confidence, Reliability &amp; Security</strong></h2>
+                    <a href="https://wa.me/60193732055" class="btn-quote" style="margin-top: 20px;">GET A QUOTE</a>
+                </div>
+                <div style="flex-shrink: 0; text-align: center;">
+                    <img src="iso-cert.png" alt="ISO Certification" style="max-height: 220px; width: auto; display: block; border: none; box-shadow: none; background: transparent;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Highlights (Orange Tone) -->
+        <section class="services-preview">
+            <div class="grid-3">
+                <div class="card">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/06/photo_2023-05-20_17-02-31-3-300x245.jpg" alt="Roller Shutters">
+                    <h4>Roller Shutters</h4>
+                    <p>Durable and secure roller shutters, available in manual, automatic, and fire-rated options, designed for a variety of applications.</p>
+                </div>
+                <div class="card">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/croppedResizedCg-300x245.jpg" alt="Collapsible Gates">
+                    <h4>Collapsible Gates</h4>
+                    <p>Strong, space-saving collapsible gates, perfect for storefronts and interior security needs, with customizable designs.</p>
+                </div>
+                <div class="card">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/metalWorks-1-300x245.jpg" alt="Metal Engineering Works">
+                    <h4>Metal Engineering Works</h4>
+                    <p>Custom metal fabrication, including gates, grilles, fences, and more, crafted with precision and high-quality materials.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-section">
+            <div>
+                <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/1w.jpg" alt="CRS Metal Team">
+            </div>
+            <div>
+                <p style="color:var(--primary); font-weight:bold; text-transform:uppercase; font-size:13px; letter-spacing:1px;">About Us</p>
+                <h2>Trusted experts with a commitment to excellence!</h2>
+                <p>With over <strong>30 years of industry experience</strong>, CRS Metal Sdn Bhd has become a trusted leader in the design, manufacturing, and installation of roller shutters, collapsible gates, and metal engineering solutions.</p>
+                <p>We are proud to be an <strong>ISO-certified company</strong>, ensuring top-tier quality control, safety practices, and environmental standards in all our operations.</p>
+                <p><strong>Call Us : <a href="tel:0193732055" style="color:var(--primary); font-weight:bold;">019-373 2055</a></strong></p>
+            </div>
+        </section>
+
+        <!-- Services Detailed Grid (3 columns) -->
+        <section class="services-full" style="background: var(--light-shade);">
+            <h2>What We Do</h2>
+            <div class="service-item-grid">
+                <div class="service-box">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/12resized.jpg" alt="Design">
+                    <div class="service-box-content">
+                        <h4>Design and Consultation</h4>
+                        <p>Personalized design consultations to ensure your roller shutters, gates, or metal works match your precise needs.</p>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/2m.jpg" alt="Manufacturing">
+                    <div class="service-box-content">
+                        <h4>Manufacturing and Supply</h4>
+                        <p>Production and supply of premium roller shutters, collapsible gates, and custom metal engineering products.</p>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/2i.jpg" alt="Installation">
+                    <div class="service-box-content">
+                        <h4>Installation</h4>
+                        <p>Professional installation by skilled technicians adhering strictly to high quality and safety guidelines.</p>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/1r.jpg" alt="Maintenance">
+                    <div class="service-box-content">
+                        <h4>Maintenance and Repairs</h4>
+                        <p>Reliable ISO-certified repair and regular maintenance services to extend product lifespan and fix issues quickly.</p>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/2w.jpg" alt="Customization">
+                    <div class="service-box-content">
+                        <h4>Customization</h4>
+                        <p>Fully customizable metalworks and security solutions tailored to specific commercial or residential dimensions.</p>
+                    </div>
+                </div>
+                <div class="service-box">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/hp1.jpg" alt="Emergency">
+                    <div class="service-box-content">
+                        <h4>Emergency Services</h4>
+                        <p>Prompt emergency repair services to resolve unexpected malfunctions and secure your premises immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Projects Carousel Section -->
+        <section class="projects-carousel-section">
+            <h2>Latest Projects</h2>
+            <div class="projects-intro">
+                 At CRS Metal, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
+                Explore a selection of our recent installations and metal engineering works below. Each project demonstrates our ability to meet diverse client needs, from roller shutters and collapsible gates to metalworks.
+            </div>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg" alt="Project 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/1w.jpg" alt="Project 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/12resized.jpg" alt="Project 3">
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>CRS Metal Sdn.Bhd.</h3>
+                <p>With over <strong>30 years of experience</strong> and <strong>ISO certification</strong>, we provide top-quality roller shutters, collapsible gates, and metal solutions.</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p style="display: flex; align-items: center; gap: 8px;">
+                    <svg style="width: 16px; height: 16px; fill: #EB7100;" viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 139.6-175.6 175.6l-49.6-60.6c-6.8-8.3-18.3-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c264.2 0 464-199.8 464-464 0-11.3-7.8-20.9-18.6-23.4z"/></svg>
+                    <a href="tel:0193732055">019-373 2055</a>
+                </p>
+                <p style="display: flex; align-items: center; gap: 8px;">
+                    <svg style="width: 16px; height: 16px; fill: #EB7100;" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM48 96h416c8.822 0 16 7.178 16 16v10.751L256 268.751 32 122.751V112c0-8.822 7.178-16 16-16zm416 320H48c-8.822 0-16-7.178-16-16V162.249l220.578 141.249a16 16 0 0 0 16.844 0L480 162.249V400c0 8.822-7.178 16-16 16z"/></svg>
+                    <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a>
+                </p>
+                <h4 style="margin-top:20px;">Office Hours</h4>
+                <p>Monday – Saturday: 8:30 a.m. – 5:00 p.m.</p>
+            </div>
+            <div>
+                <h4>Address</h4>
+                <p>Lot 46064 Batu 9, Jalan Sungai Tua, Kampung Sungai Tua, 68100 Batu Caves, Gombak, Selangor Darul Ehsan, Malaysia.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Proudly powered by CRS Metal Sdn.Bhd.</p>
+        </div>
+    </footer>
+
+    <!-- Carousel Script -->
+    <script>
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const track = document.getElementById('carouselTrack');
+            const slides = track.children;
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        // Auto play carousel every 4 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 4000);
+    </script>
+
+</body>
+</html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CRS Metal Sdn.Bhd. – Roller Shutter, Collapsible Gates, Metal Doors and Iron Works</title>
@@ -252,7 +572,7 @@
             <h2>Latest Projects</h2>
             <div class="projects-intro">
                 At CRS Metal, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
-                Explore a selection of our recent installations and metal engineering works below. Each project highlights our dedication to precision, security, and quality craftsmanship tailored to our clients' needs.
+                Explore a selection of our recent installations and metal engineering works below. Each project demonstrates our ability to meet diverse client needs, from roller shutters and collapsible gates to metalworks.
             </div>
             
             <div class="carousel-container">
