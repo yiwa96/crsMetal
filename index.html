@@ -35,7 +35,7 @@
         
         /* Hero Section */
         .hero { background: linear-gradient(rgba(6,42,96,0.85), rgba(6,42,96,0.85)), url('https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg') center/cover no-repeat; color: var(--light-color); padding: 80px 20px; text-align: left; }
-        .hero-content { max-width: 1180px; margin: 0 auto; }
+        .hero-content { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
         .hero h1 { font-size: 42px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
         .hero h2 { font-size: 20px; font-weight: 400; margin-bottom: 30px; }
         
@@ -50,14 +50,26 @@
         .about-section img { width: 100%; height: auto; border-radius: 4px; }
         .about-section h2 { color: var(--primary); font-size: 32px; margin-top: 0; }
 
-        /* Services Grid Section */
+        /* Services Grid Section (3 columns) */
         .services-full { padding: 80px 20px; max-width: 1180px; margin: 0 auto; text-align: center; }
         .services-full h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 40px; }
-        .service-item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; text-align: left; }
+        .service-item-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left; }
         .service-box { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .service-box img { width: 100%; height: auto; display: block; }
+        .service-box img { width: 100%; height: 220px; object-fit: cover; display: block; }
         .service-box-content { padding: 25px; }
         .service-box-content h4 { color: var(--primary); font-size: 20px; margin-top: 0; }
+
+        /* Projects Carousel Section */
+        .projects-carousel-section { padding: 80px 20px; background: #fff; text-align: center; }
+        .projects-carousel-section h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 40px; }
+        .carousel-container { max-width: 1180px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-slide { min-width: 100%; box-sizing: border-box; }
+        .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(6,42,96,0.7); color: white; border: none; padding: 15px; cursor: pointer; font-size: 20px; border-radius: 4px; z-index: 10; }
+        .carousel-btn:hover { background: var(--secondary); }
+        .carousel-prev { left: 15px; }
+        .carousel-next { right: 15px; }
 
         /* Footer */
         footer { background: var(--primary); color: var(--light-color); padding: 60px 20px 20px; }
@@ -65,9 +77,14 @@
         .footer-grid h3, .footer-grid h4 { color: var(--light-color); text-transform: uppercase; }
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 14px; }
 
+        @media(max-width: 900px) {
+            .service-item-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media(max-width: 768px) {
             .about-section { grid-template-columns: 1fr; }
             .hero h1 { font-size: 32px; }
+            .service-item-grid { grid-template-columns: 1fr; }
+            .carousel-slide img { height: 300px; }
         }
     </style>
 </head>
@@ -77,10 +94,10 @@
         <div class="top-bar">
             <div class="top-bar-left">
               <span>📧 <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a></span>
-              <span>📞 <a href="https://wa.me/60193732055">019-373 2055</a></span>
+              <span>📞 <a href="tel:0193732055">019-373 2055</a></span>
             </div>
             <div>
-              <a href="https://www.facebook.com/profile.php?id=100091624826866" target="_blank">Facebook</a>
+              <a href="https://facebook.com" target="_blank">Facebook</a>
             </div>
         </div>
         <div class="main-header">
@@ -95,22 +112,19 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <!-- Hero Section -->
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-        <div style="flex: 1; min-width: 280px;">
-            <h1>ISO Certified Solutions: Your Trusted Security Experts!</h1>
-            <h2><strong>CRS : Confidence, Reliability &amp; Security</strong></h2>
-            <a href="https://wa.me/60193732055" class="btn-quote" style="margin-top: 20px;">GET A QUOTE</a>
-        </div>
-        <!-- 无框、无文字的 ISO 证书照片 -->
-        <div style="flex-shrink: 0; text-align: center;">
-            <img src="iso-cert.png" alt="ISO Certification" style="max-height: 220px; width: auto; display: block; border: none; box-shadow: none; background: transparent;">
-        </div>
-    </div>
-</section>
+        <!-- Hero Section with ISO Photo (Borderless) -->
+        <section class="hero">
+            <div class="hero-content">
+                <div style="flex: 1; min-width: 280px;">
+                    <h1>ISO Certified Solutions: Your Trusted Security Experts!</h1>
+                    <h2><strong>CRS : Confidence, Reliability &amp; Security</strong></h2>
+                    <a href="https://wa.me/60193732055" class="btn-quote" style="margin-top: 20px;">GET A QUOTE</a>
+                </div>
+                <div style="flex-shrink: 0; text-align: center;">
+                    <img src="iso-cert.png" alt="ISO Certification" style="max-height: 220px; width: auto; display: block; border: none; box-shadow: none; background: transparent;">
+                </div>
+            </div>
+        </section>
 
         <!-- Core Highlights -->
         <section class="services-preview">
@@ -143,11 +157,11 @@
                 <h2>Trusted experts with a commitment to excellence!</h2>
                 <p>With over <strong>30 years of industry experience</strong>, CRS Metal Sdn Bhd has become a trusted leader in the design, manufacturing, and installation of roller shutters, collapsible gates, and metal engineering solutions.</p>
                 <p>We are proud to be an <strong>ISO-certified company</strong>, ensuring top-tier quality control, safety practices, and environmental standards in all our operations.</p>
-                <p><strong>Call Us : <a href="https://wa.me/60193732055" style="color:var(--primary); font-weight:bold;">019-373 2055</a></strong></p>
+                <p><strong>Call Us : <a href="tel:0193732055" style="color:var(--primary); font-weight:bold;">019-373 2055</a></strong></p>
             </div>
         </section>
 
-        <!-- Services Detailed Grid -->
+        <!-- Services Detailed Grid (3 columns) -->
         <section class="services-full" style="background: var(--light-shade);">
             <h2>What We Do</h2>
             <div class="service-item-grid">
@@ -195,6 +209,26 @@
                 </div>
             </div>
         </section>
+
+        <!-- Our Projects Carousel Section -->
+        <section class="projects-carousel-section">
+            <h2>Our Projects</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg" alt="Project 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/1w.jpg" alt="Project 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/12resized.jpg" alt="Project 3">
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -205,7 +239,7 @@
             </div>
             <div>
                 <h4>Contact Us</h4>
-                <p>📞 <a href="https://wa.me/60193732055">019-373 2055</a></p>
+                <p>📞 <a href="tel:0193732055">019-373 2055</a></p>
                 <p>📧 <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a></p>
                 <h4 style="margin-top:20px;">Office Hours</h4>
                 <p>Monday – Saturday: 8:30 a.m. – 5:00 p.m.</p>
@@ -220,6 +254,20 @@
         </div>
     </footer>
 
+    <!-- Carousel Script -->
+    <script>
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const track = document.getElementById('carouselTrack');
+            const slides = track.children;
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        // Auto play carousel every 4 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 4000);
+    </script>
+
 </body>
 </html>
-```[cite: 1]
