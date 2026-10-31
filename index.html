@@ -37,7 +37,7 @@
         /* Main Header */
         .main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; max-width: 1180px; margin: 0 auto; }
         .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-area img { width: 70px; height: auto; } /* 放大左上角 Logo */
+        .logo-area img { width: 70px; height: auto; }
         .logo-area h1 { font-size: 24px; color: var(--primary); margin: 0; font-weight: 800; }
         .btn-quote { background: var(--secondary); color: var(--light-color); padding: 15px 30px; font-weight: 600; border-radius: 4px; display: inline-block; }
         .btn-quote:hover { opacity: 0.9; }
@@ -48,10 +48,23 @@
         .hero h1 { font-size: 42px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
         .hero h2 { font-size: 20px; font-weight: 400; margin-bottom: 30px; }
         
-        /* Services / Features Grid */
+        /* Services / Features Grid (With Orange Tone Filter) */
         .services-preview { background: var(--light-shade); padding: 60px 20px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1180px; margin: 0 auto; }
         .card { background: var(--light-color); border-bottom: 2px solid var(--secondary); padding: 30px; box-shadow: 0 6px 9px rgba(0,0,0,0.1); }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            /* 橙色基调滤镜效果：将图片渲染为品牌橙色调 */
+            filter: sepia(90%) hue-rotate(320deg) saturate(350%) brightness(95%);
+            transition: filter 0.3s ease;
+        }
+        .card img:hover {
+            filter: sepia(50%) hue-rotate(320deg) saturate(250%) brightness(100%);
+        }
         .card h4 { font-size: 22px; color: var(--heading-color); margin-top: 0; }
 
         /* About Section */
@@ -105,11 +118,11 @@
         <div class="top-bar">
             <div class="top-bar-left">
               <span class="top-bar-item">
-                <img src="envelope-solid-full.svg" alt="Email">
+                <img src="envelope-solid-full.jpg" alt="Email">
                 <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a>
               </span>
               <span class="top-bar-item">
-                <img src="phone-solid-full.svg" alt="Phone">
+                <img src="phone-solid-full.png" alt="Phone">
                 <a href="tel:0193732055">019-373 2055</a>
               </span>
             </div>
@@ -150,21 +163,21 @@
             </div>
         </section>
 
-        <!-- Core Highlights -->
+        <!-- Core Highlights (Roller Shutters, Collapsible Gates, Metal Engineering Works with Orange Tone) -->
         <section class="services-preview">
             <div class="grid-3">
                 <div class="card">
-                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/06/photo_2023-05-20_17-02-31-3-300x245.jpg" alt="Roller Shutters" style="width:100%; height:auto; margin-bottom:20px;">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/06/photo_2023-05-20_17-02-31-3-300x245.jpg" alt="Roller Shutters">
                     <h4>Roller Shutters</h4>
                     <p>Durable and secure roller shutters, available in manual, automatic, and fire-rated options, designed for a variety of applications.</p>
                 </div>
                 <div class="card">
-                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/croppedResizedCg-300x245.jpg" alt="Collapsible Gates" style="width:100%; height:auto; margin-bottom:20px;">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/croppedResizedCg-300x245.jpg" alt="Collapsible Gates">
                     <h4>Collapsible Gates</h4>
                     <p>Strong, space-saving collapsible gates, perfect for storefronts and interior security needs, with customizable designs.</p>
                 </div>
                 <div class="card">
-                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/metalWorks-1-300x245.jpg" alt="Metal Engineering Works" style="width:100%; height:auto; margin-bottom:20px;">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/metalWorks-1-300x245.jpg" alt="Metal Engineering Works">
                     <h4>Metal Engineering Works</h4>
                     <p>Custom metal fabrication, including gates, grilles, fences, and more, crafted with precision and high-quality materials.</p>
                 </div>
@@ -238,18 +251,13 @@
         <section class="projects-carousel-section">
             <h2>Latest Projects</h2>
             <div class="projects-intro">
-                At CRS Metal, our projects reflect our ongoing commitment to quality, durability, and precision engineering. From residential security solutions to heavy-duty commercial installations, we bring decades of trusted craftsmanship to every job.<br><br>
-                Explore a selection of our recent installations and metal engineering works below. Each project demonstrates our ability to meet diverse client needs, from roller shutters and collapsible gates to metalworks.
-
-
+                At CRS Metal, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
+                Explore a selection of our recent installations and metal engineering works below. Each project highlights our dedication to precision, security, and quality craftsmanship tailored to our clients' needs.
             </div>
             
             <div class="carousel-container">
                 <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
                 <div class="carousel-track" id="carouselTrack">
-                    <!-- 提示：以后如果你要添加新图片，只需在这里复制粘贴新的一行即可：
-                    <div class="carousel-slide"><img src="你的图片文件名或链接.jpg" alt="Project Name"></div> -->
-                    
                     <div class="carousel-slide">
                         <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg" alt="Project 1">
                     </div>
@@ -274,11 +282,11 @@
             <div>
                 <h4>Contact Us</h4>
                 <p style="display: flex; align-items: center; gap: 8px;">
-                    <img src="phone-solid-full.svg" alt="Phone" style="width: 16px; height: 16px;">
+                    <img src="phone-solid-full.png" alt="Phone" style="width: 16px; height: 16px;">
                     <a href="tel:0193732055">019-373 2055</a>
                 </p>
                 <p style="display: flex; align-items: center; gap: 8px;">
-                    <img src="envelope-solid-full.svg" alt="Email" style="width: 16px; height: 16px;">
+                    <img src="envelope-solid-full.jpg" alt="Email" style="width: 16px; height: 16px;">
                     <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a>
                 </p>
                 <h4 style="margin-top:20px;">Office Hours</h4>
