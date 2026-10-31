@@ -59,19 +59,17 @@
         .service-box-content { padding: 25px; }
         .service-box-content h4 { color: var(--primary); font-size: 20px; margin-top: 0; }
 
-        /* Projects Carousel Section */
-        .projects-carousel-section { padding: 80px 20px; background: #fff; text-align: center; }
-        .projects-carousel-section h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 15px; }
-        .projects-intro { max-width: 800px; margin: 0 auto 40px auto; color: var(--foreground); font-size: 16px; line-height: 1.6; }
+        /* Our Projects Showcase Section */
+        .projects-showcase { padding: 80px 20px; background: #fff; text-align: center; }
+        .projects-showcase h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 15px; }
+        .showcase-desc { max-width: 900px; margin: 0 auto 50px auto; color: var(--foreground); font-size: 16px; line-height: 1.6; }
         
-        .carousel-container { max-width: 1180px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
-        .carousel-slide { min-width: 100%; box-sizing: border-box; }
-        .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
-        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(6,42,96,0.7); color: white; border: none; padding: 15px; cursor: pointer; font-size: 20px; border-radius: 4px; z-index: 10; }
-        .carousel-btn:hover { background: var(--secondary); }
-        .carousel-prev { left: 15px; }
-        .carousel-next { right: 15px; }
+        .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1180px; margin: 0 auto; text-align: left; }
+        .showcase-card { background: var(--light-shade); border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+        .showcase-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .showcase-card-body { padding: 25px; }
+        .showcase-card-body h3 { color: var(--primary); font-size: 20px; margin-top: 0; margin-bottom: 10px; }
+        .showcase-card-body p { font-size: 14px; color: var(--foreground); margin: 0; }
 
         /* Footer */
         footer { background: var(--primary); color: var(--light-color); padding: 60px 20px 20px; }
@@ -80,13 +78,12 @@
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 14px; }
 
         @media(max-width: 900px) {
-            .service-item-grid { grid-template-columns: repeat(2, 1fr); }
+            .service-item-grid, .showcase-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media(max-width: 768px) {
             .about-section { grid-template-columns: 1fr; }
             .hero h1 { font-size: 32px; }
-            .service-item-grid { grid-template-columns: 1fr; }
-            .carousel-slide img { height: 300px; }
+            .service-item-grid, .showcase-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -108,7 +105,7 @@
                 <h1>CRS Metal Sdn.Bhd.</h1>
             </div>
             <div>
-                <a href="url?id=2" class="btn-quote">GET A QUOTE</a>
+                <a href="https://crsmetal.pages.dev/url?id=2" class="btn-quote">GET A QUOTE</a>
             </div>
         </div>
     </header>
@@ -212,28 +209,35 @@
             </div>
         </section>
 
-        <!-- Our Projects Carousel Section with Custom Intro Text -->
-        <section class="projects-carousel-section">
-            <h2>Our Projects</h2>
-            <div class="projects-intro">
-                At CRS Metal, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
-                Explore our work below in this slideshow, featuring a selection of recent installations. Each project demonstrates our ability to meet diverse client needs, from roller shutters and collapsible gates to metalworks.
+        <!-- Our Projects Showcase Section (No Frequent Updates Needed) -->
+        <section class="projects-showcase">
+            <h2>Our Projects &amp; Expertise</h2>
+            <div class="showcase-desc">
+                At CRS Metal, we deliver top-tier craftsmanship across residential, commercial, and industrial sectors. Backed by 30 years of industry experience and ISO-certified standards, every project reflects our commitment to security, durability, and precision engineering.
             </div>
             
-            <div class="carousel-container">
-                <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
-                <div class="carousel-track" id="carouselTrack">
-                    <div class="carousel-slide">
-                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg" alt="Project 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/1w.jpg" alt="Project 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/12resized.jpg" alt="Project 3">
+            <div class="showcase-grid">
+                <div class="showcase-card">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-09-at-20.28.18.jpeg" alt="Commercial & Industrial Projects">
+                    <div class="showcase-card-body">
+                        <h3>Commercial &amp; Industrial</h3>
+                        <p>Heavy-duty roller shutters, automated security systems, and large-scale metal engineering built for maximum safety and long-term reliability.</p>
                     </div>
                 </div>
-                <button class="carousel-btn carousel-next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="showcase-card">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/1w.jpg" alt="Residential Security Solutions">
+                    <div class="showcase-card-body">
+                        <h3>Residential Solutions</h3>
+                        <p>Custom collapsible gates, stylish grilles, and secure metal doors tailored precisely to match modern home aesthetics and security needs.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <img src="https://crsmetalsdnbhd.com/wp-content/uploads/2024/09/12resized.jpg" alt="ISO-Certified Quality">
+                    <div class="showcase-card-body">
+                        <h3>ISO-Certified Quality</h3>
+                        <p>Strict quality control from design and custom manufacturing to professional on-site installation and maintenance support.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -247,7 +251,7 @@
             <div>
                 <h4>Contact Us</h4>
                 <p>📞 <a href="tel:0193732055">019-373 2055</a></p>
-                <p>📧 <a href="url?id=0">crsmetal_jbchong@hotmail.com</a></p>
+                <p>📧 <a href="mailto:crsmetal_jbchong@hotmail.com">crsmetal_jbchong@hotmail.com</a></p>
                 <h4 style="margin-top:20px;">Office Hours</h4>
                 <p>Monday – Saturday: 8:30 a.m. – 5:00 p.m.</p>
             </div>
@@ -260,21 +264,6 @@
             <p>Proudly powered by CRS Metal Sdn.Bhd.</p>
         </div>
     </footer>
-
-    <!-- Carousel Script -->
-    <script>
-        let currentIndex = 0;
-        function moveSlide(direction) {
-            const track = document.getElementById('carouselTrack');
-            const slides = track.children;
-            currentIndex = (currentIndex + direction + slides.length) % slides.length;
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        // Auto play carousel every 4 seconds
-        setInterval(() => {
-            moveSlide(1);
-        }, 4000);
-    </script>
 
 </body>
 </html>
