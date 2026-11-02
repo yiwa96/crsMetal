@@ -47,7 +47,7 @@
         .hero h1 { font-size: 42px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
         .hero h2 { font-size: 20px; font-weight: 400; margin-bottom: 30px; }
         
-        /* Services / Features Grid (Advanced Greyish Tone) */
+        /* Services / Features Grid (Misty Grey / 雾面高级灰调) */
         .services-preview { background: var(--light-shade); padding: 60px 20px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1180px; margin: 0 auto; }
         .card { background: var(--light-color); border-bottom: 2px solid var(--secondary); padding: 30px; box-shadow: 0 6px 9px rgba(0,0,0,0.1); }
@@ -57,12 +57,12 @@
             object-fit: cover;
             margin-bottom: 20px;
             border-radius: 4px;
-            /* 调整为高级冷灰质感滤镜：去饱和度并带有微量高级灰调，极具现代工业风 */
-            filter: grayscale(20%) contrast(105%) brightness(96%);
+            /* 雾面高级灰质感：低饱和度、柔和对比度与微量朦胧感 */
+            filter: grayscale(85%) contrast(90%) brightness(102%);
             transition: filter 0.3s ease;
         }
         .card img:hover {
-            filter: grayscale(0%) contrast(100%) brightness(100%);
+            filter: grayscale(30%) contrast(100%) brightness(100%);
         }
         .card h4 { font-size: 22px; color: var(--heading-color); margin-top: 0; }
 
@@ -80,15 +80,15 @@
         .service-box-content { padding: 25px; }
         .service-box-content h4 { color: var(--primary); font-size: 20px; margin-top: 0; }
 
-        /* Latest Projects Carousel Section */
+        /* Latest Projects Carousel Section (完整展示图片，不裁剪) */
         .projects-carousel-section { padding: 80px 20px; background: #fff; text-align: center; }
         .projects-carousel-section h2 { font-size: 36px; color: var(--heading-color); margin-bottom: 15px; }
         .projects-intro { max-width: 1180px; margin: 0 auto 40px auto; color: var(--foreground); font-size: 16px; line-height: 1.6; text-align: left; }
         
-        .carousel-container { max-width: 1180px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .carousel-container { max-width: 1180px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #f8f9fa; }
         .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
-        .carousel-slide { min-width: 100%; box-sizing: border-box; }
-        .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .carousel-slide { min-width: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center; background: #111; }
+        .carousel-slide img { width: 100%; height: 500px; object-fit: contain; display: block; } /* 改为 contain 确保完整 show 完整张图片 */
         .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(6,42,96,0.7); color: white; border: none; padding: 15px; cursor: pointer; font-size: 20px; border-radius: 4px; z-index: 10; }
         .carousel-btn:hover { background: var(--secondary); }
         .carousel-prev { left: 15px; }
@@ -160,17 +160,17 @@
             </div>
         </section>
 
-        <!-- Core Highlights (Greyish Tone) -->
+        <!-- Core Highlights (Misty Grey Tone & Single Nouns) -->
         <section class="services-preview">
             <div class="grid-3">
                 <div class="card">
-                    <img src="RS0.jpg" alt="Roller Shutters">
-                    <h4>Roller Shutters</h4>
+                    <img src="RS0.jpg" alt="Roller Shutter">
+                    <h4>Roller Shutter</h4>
                     <p>Durable and secure roller shutters, available in manual, automatic, and fire-rated options, designed for a variety of applications.</p>
                 </div>
                 <div class="card">
-                    <img src="CG0.jpg" alt="Collapsible Gates">
-                    <h4>Collapsible Gates</h4>
+                    <img src="CG0.jpg" alt="Collapsible Gate">
+                    <h4>Collapsible Gate</h4>
                     <p>Strong, space-saving collapsible gates, perfect for storefronts and interior security needs, with customizable designs.</p>
                 </div>
                 <div class="card">
@@ -243,12 +243,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- Latest Projects Carousel Section -->
+        
         <section class="projects-carousel-section">
             <h2>Latest Projects</h2>
             <div class="projects-intro">
-               At CRS Metal, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
+                At <strong>CRS Metal</strong>, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
                Explore a selection of our recent installations and metal engineering works below. Each project demonstrates our ability to meet diverse client needs, from roller shutters and collapsible gates to metalworks.
             </div>
             
