@@ -17,6 +17,9 @@
             --foreground: #6A6A6A;
             --light-shade: #F4F7FF;
         }
+        html {
+            scroll-behavior: smooth; /* 开启平滑滚动效果 */
+        }
         body {
             margin: 0;
             font-family: 'Public Sans', sans-serif;
@@ -144,7 +147,7 @@
         }
     </style>
 </head>
-<body>
+<body id="home">
 
     <header>
         <div class="top-bar">
@@ -211,8 +214,8 @@
             </div>
         </section>
 
-        <!-- About Us Section (已在文字下方加入无背景的精致 ISO 认证小徽章) -->
-        <section class="about-section">
+        <!-- About Us Section (加上 id="about" 用于锚点跳转) -->
+        <section class="about-section" id="about">
             <div>
                 <img src="about.jpg" alt="CRS Metal Team">
             </div>
@@ -221,16 +224,11 @@
                 <h2>Trusted experts with a commitment to excellence!</h2>
                 <p>With over <strong>30 years of industry experience</strong>, CRS Metal Sdn Bhd has become a trusted leader in the design, manufacturing, and installation of roller shutters, collapsible gates, and metal engineering solutions.</p>
                 <p>We are proud to be an <strong>ISO-certified company</strong>, ensuring top-tier quality control, safety practices, and environmental standards in all our operations.</p>
-                <!-- 无背景的 ISO 认证小徽章 -->
-                <div style="margin-top: 25px; display: flex; align-items: center; gap: 12px;">
-                    <img src="iso-cert.png" alt="ISO Certification Badge" style="height: 48px; width: auto; background: transparent; display: block;">
-                    <span style="font-size: 14px; font-weight: 700; color: var(--primary); letter-spacing: 0.5px;">ISO 9001:2015 Certified Manufacturing &amp; Engineering</span>
-                </div>
             </div>
         </section>
 
-        <!-- Services Detailed Grid (3 columns) -->
-        <section class="services-full" style="background: var(--light-shade);">
+        <!-- Services Detailed Grid Section (加上 id="what-we-do" 用于锚点跳转) -->
+        <section class="services-full" id="what-we-do" style="background: var(--light-shade);">
             <h2>What We Do</h2>
             <div class="service-item-grid">
                 <div class="service-box">
@@ -278,8 +276,8 @@
             </div>
         </section>
 
-        <!-- Latest Projects Carousel Section -->
-        <section class="projects-carousel-section">
+        <!-- Latest Projects Carousel Section (加上 id="projects" 用于锚点跳转) -->
+        <section class="projects-carousel-section" id="projects">
             <h2>Latest Projects</h2>
             <div class="projects-intro">
                 At <strong>CRS Metal</strong>, we are proud to showcase some of our latest projects, each reflecting our commitment to quality, innovation, and attention to detail. From residential security solutions to large-scale industrial metalworks, we’ve brought our 30 years of expertise and ISO-certified craftsmanship to a wide variety of projects.<br><br>
@@ -315,11 +313,16 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
     </a>
 
-    <footer>
+    <!-- 加上 id="contact" 用于 Contact Us 锚点跳转 -->
+    <footer id="contact">
         <div class="footer-grid">
             <div>
                 <h3>CRS Metal Sdn. Bhd. (532432-H)</h3>
                 <p>With over <strong>30 years of experience</strong> and <strong>ISO certification</strong>, we provide top-quality roller shutters, collapsible gates, and metal solutions.</p>
+                <!-- 将 ISO 证书小徽章放在这里 -->
+                <div style="margin-top: 20px;">
+                    <img src="iso-cert.png" alt="ISO Certification Badge" style="height: 48px; width: auto; background: transparent; display: block;">
+                </div>
             </div>
             <div>
                 <h4>Contact Us</h4>
@@ -337,47 +340,22 @@
             <div>
                 <h4>Address &amp; Location</h4>
                 <p>Lot 46064 Batu 9, Jalan Sungai Tua, Kampung Sungai Tua, 68100 Batu Caves, Gombak, Selangor Darul Ehsan, Malaysia.</p>
-                <!-- 谷歌地图精确 Pin 点 -->
+                <!-- 精确更新的官方 Google Maps 嵌入代码 -->
                 <div style="margin-top: 15px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
-                    <iframe title="CRS Metal Location Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.5595!2d101.6853!3d3.2435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc384358a9829f%3A0x0!2zQ1JTIE1ldGFsIFNkbiBCaGQ!5e0!3m2!1sen!2smy!4v1710000000000!5m2!1sen!2smy" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.359525492982!2d101.67704909999999!3d3.2605842000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc47aae5e849ed%3A0x1ffa8308075a812b!2sCRS%20Metal%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1793624825750!5m2!1sen!2smy" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </div>
 
-        <!-- 底部小字导航栏 -->
+        <!-- 精简后的底部小字导航（对应各自 Section 锚点） -->
         <div class="footer-nav">
-            <a href="#">Home</a> | 
-            <a href="#">Roller Shutter</a> | 
-            <a href="#">Collapsible Gate</a> | 
-            <a href="#">Metal Engineering Works</a> | 
-            <a href="#">About Us</a> | 
-            <a href="#">Latest Projects</a> | 
-            <a href="#">Contact Us</a>
+            <a href="#home">Home</a> | 
+            <a href="#about">About Us</a> | 
+            <a href="#what-we-do">What We Do</a> | 
+            <a href="#projects">Latest Projects</a> | 
+            <a href="#contact">Contact Us</a>
         </div>
 
         <!-- SEO Keywords 精致底栏补充 -->
         <div class="footer-seo">
-            <strong>Specialized Solutions:</strong> Automated &amp; Manual Roller Shutters, Fire-Rated Roller Shutters, Diamond &amp; Square Design Collapsible Gates, Custom Metal Grilles, Iron Doors, Gates, Fences, and Structural Metal Engineering Works in Malaysia.
-        </div>
-
-        <div class="footer-bottom">
-            <p>Proudly powered by CRS Metal Sdn. Bhd. (532432-H)</p>
-        </div>
-    </footer>
-
-    <!-- Carousel Script (2.5秒切换) -->
-    <script>
-        let currentIndex = 0;
-        function moveSlide(direction) {
-            const track = document.getElementById('carouselTrack');
-            const slides = track.children;
-            currentIndex = (currentIndex + direction + slides.length) % slides.length;
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        setInterval(() => {
-            moveSlide(1);
-        }, 2500);
-    </script>
-
-</body>
-</html>
+            <strong>Specialized Solutions:</strong> Automated &amp; Manual Roller Shutters, Fire-Rated Roller Shutters, Diamond &amp; Square Design Collapsible Gates,
