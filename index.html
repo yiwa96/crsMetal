@@ -124,7 +124,13 @@
         footer { background: var(--primary); color: var(--light-color); padding: 60px 20px 20px; }
         .footer-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .footer-grid h3, .footer-grid h4 { color: var(--light-color); text-transform: uppercase; }
-        .footer-seo { max-width: 1180px; margin: 0 auto 30px auto; font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        
+        /* 底部小字导航样式 */
+        .footer-nav { max-width: 1180px; margin: 0 auto 20px auto; text-align: center; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; }
+        .footer-nav a { color: rgba(255,255,255,0.8); margin: 0 12px; transition: color 0.2s; }
+        .footer-nav a:hover { color: var(--secondary); }
+
+        .footer-seo { max-width: 1180px; margin: 0 auto 20px auto; font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 14px; }
 
         @media(max-width: 900px) {
@@ -164,7 +170,7 @@
                 <h1>CRS Metal Sdn.Bhd.</h1>
             </div>
             <div>
-                <a href="url?id=1" class="btn-quote" target="_blank">GET A QUOTE</a>
+                <a href="https://wa.me/60193732055" class="btn-quote" target="_blank">GET A QUOTE</a>
             </div>
         </div>
     </header>
@@ -205,7 +211,7 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
+        <!-- About Us Section (已在文字下方加入无背景的精致 ISO 认证小徽章) -->
         <section class="about-section">
             <div>
                 <img src="about.jpg" alt="CRS Metal Team">
@@ -215,6 +221,11 @@
                 <h2>Trusted experts with a commitment to excellence!</h2>
                 <p>With over <strong>30 years of industry experience</strong>, CRS Metal Sdn Bhd has become a trusted leader in the design, manufacturing, and installation of roller shutters, collapsible gates, and metal engineering solutions.</p>
                 <p>We are proud to be an <strong>ISO-certified company</strong>, ensuring top-tier quality control, safety practices, and environmental standards in all our operations.</p>
+                <!-- 无背景的 ISO 认证小徽章 -->
+                <div style="margin-top: 25px; display: flex; align-items: center; gap: 12px;">
+                    <img src="iso-cert.png" alt="ISO Certification Badge" style="height: 48px; width: auto; background: transparent; display: block;">
+                    <span style="font-size: 14px; font-weight: 700; color: var(--primary); letter-spacing: 0.5px;">ISO 9001:2015 Certified Manufacturing &amp; Engineering</span>
+                </div>
             </div>
         </section>
 
@@ -307,7 +318,6 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <!-- 加上了营业执照号 (532432-H) -->
                 <h3>CRS Metal Sdn. Bhd. (532432-H)</h3>
                 <p>With over <strong>30 years of experience</strong> and <strong>ISO certification</strong>, we provide top-quality roller shutters, collapsible gates, and metal solutions.</p>
             </div>
@@ -331,14 +341,21 @@
                 <div style="margin-top: 15px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
                     <iframe title="CRS Metal Location Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.5595!2d101.6853!3d3.2435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc384358a9829f%3A0x0!2zQ1JTIE1ldGFsIFNkbiBCaGQ!5e0!3m2!1sen!2smy!4v1710000000000!5m2!1sen!2smy" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <!-- 加上了 ISO 认证小徽章在地图下方 -->
-                <div style="margin-top: 12px; text-align: center;">
-                    <img src="iso-cert.png" alt="ISO Certification Badge" style="max-height: 55px; width: auto; background: rgba(255,255,255,0.9); padding: 4px 8px; border-radius: 4px;">
-                </div>
             </div>
         </div>
 
-        <!-- SEO Keywords 精致底栏补充（解决底部空旷感，极度提升SEO） -->
+        <!-- 底部小字导航栏 -->
+        <div class="footer-nav">
+            <a href="#">Home</a> | 
+            <a href="#">Roller Shutter</a> | 
+            <a href="#">Collapsible Gate</a> | 
+            <a href="#">Metal Engineering Works</a> | 
+            <a href="#">About Us</a> | 
+            <a href="#">Latest Projects</a> | 
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- SEO Keywords 精致底栏补充 -->
         <div class="footer-seo">
             <strong>Specialized Solutions:</strong> Automated &amp; Manual Roller Shutters, Fire-Rated Roller Shutters, Diamond &amp; Square Design Collapsible Gates, Custom Metal Grilles, Iron Doors, Gates, Fences, and Structural Metal Engineering Works in Malaysia.
         </div>
