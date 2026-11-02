@@ -46,6 +46,11 @@
         .logo-area { display: flex; align-items: center; gap: 15px; }
         .logo-area img { width: 70px; height: auto; }
         .logo-area h1 { font-size: 24px; color: var(--primary); margin: 0; font-weight: 800; }
+        
+        /* 右上角证书图片样式 */
+        .header-cert-img { height: 50px; width: auto; border-radius: 4px; border: 1px solid #ddd; transition: transform 0.2s; display: block; }
+        .header-cert-img:hover { transform: scale(1.05); }
+
         .btn-quote { background: var(--secondary); color: var(--light-color); padding: 15px 30px; font-weight: 600; border-radius: 4px; display: inline-block; }
         .btn-quote:hover { opacity: 0.9; }
         
@@ -162,7 +167,7 @@
               </span>
             </div>
             <div class="social-icons">
-              <a href="https://www.facebook.com/p/CRS-METAL-SDN-BHD-100091624826866/" target="_blank" title="Facebook">
+              <a href="url?id=2" target="_blank" title="Facebook">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
               </a>
             </div>
@@ -173,7 +178,10 @@
                 <h1>CRS Metal Sdn.Bhd.</h1>
             </div>
             <div>
-                <a href="https://wa.me/60193732055" class="btn-quote" target="_blank">GET A QUOTE</a>
+                <!-- 右上角已换成 crsCert.png 证书图片 -->
+                <a href="crsCert.png" target="_blank" title="View Certificate">
+                    <img src="crsCert.png" alt="CRS Certificate" class="header-cert-img">
+                </a>
             </div>
         </div>
     </header>
@@ -224,9 +232,6 @@
                 <h2>Trusted experts with a commitment to excellence!</h2>
                 <p>With over <strong>30 years of industry experience</strong>, CRS Metal Sdn Bhd has become a trusted leader in the design, manufacturing, and installation of roller shutters, collapsible gates, and metal engineering solutions.</p>
                 <p>We are proud to be an <strong>ISO-certified company</strong>, ensuring top-tier quality control, safety practices, and environmental standards in all our operations.</p>
-             <!-- 无背景的 ISO 认证小徽章 -->
-                <div style="margin-top: 25px; display: flex; align-items: center; gap: 12px;">
-                    <img src="iso-cert.png" alt="ISO Certification Badge" style="height: 48px; width: auto; background: transparent; display: block;">
             </div>
         </section>
 
