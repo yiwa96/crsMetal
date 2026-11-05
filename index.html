@@ -148,7 +148,7 @@
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 14px; }
 
         /* Default hidden elements for mobile drawer on desktop */
-        .mobile-side-drawer, #mobile-menu-toggle { display: none; }
+        .mobile-side-drawer, #mobile-menu-toggle, .cert-row-mobile { display: none; }
 
         @media(max-width: 900px) {
             .service-item-grid { grid-template-columns: repeat(2, 1fr); }
@@ -162,16 +162,16 @@
             /* 1. Remove the top left navigation bar / top bar items on mobile */
             .top-bar { display: none !important; }
 
-            /* 3. Adjust floating WhatsApp position further to the left so it's fully seen */
+            /* 3. Adjust floating WhatsApp position much further to the left so it's fully seen */
             .floating-whatsapp {
-                right: 28px !important;
-                bottom: 25px !important;
+                right: 35px !important;
+                bottom: 30px !important;
             }
 
             /* 2. Adjust ISO cert in hero section further to the left */
             .hero-content img[alt="ISO Certification"] {
                 position: relative;
-                left: -20px !important;
+                left: -35px !important;
             }
 
             /* 4. Make header sticky/fixed so it scrolls with the user */
@@ -212,7 +212,7 @@
                 margin: 0;
             }
 
-            /* 1 (from new request): Center the cert image block underneath instead of text alignment */
+            /* Center the cert image block underneath */
             .cert-row-mobile {
                 display: flex !important;
                 justify-content: center !important;
@@ -247,7 +247,7 @@
                 border-radius: 2px;
             }
 
-            /* 5. Fix mobile drawer visibility rules */
+            /* Fix mobile drawer visibility rules */
             #mobile-menu-toggle { display: none; }
             .mobile-side-drawer {
                 display: block;
