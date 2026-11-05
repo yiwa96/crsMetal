@@ -397,18 +397,18 @@
         </div>
     </footer>
 
-    <!-- 脚本：处理手机点击放大、轮播图自动切换 -->
+   <!-- 脚本：处理手机点击放大、轮播图自动切换、以及手机端板块快速切换 -->
     <script>
         // 手机端点击证书原地放大/复原
         function toggleCert(event) {
             event.stopPropagation();
             const img = document.getElementById('certImg');
-            img.classList.toggle('active');
+            if (img) img.classList.toggle('active');
         }
         // 点击页面其他地方时关闭手机端放大
         document.addEventListener('click', function() {
             const img = document.getElementById('certImg');
-            if (img.classList.contains('active')) {
+            if (img && img.classList.contains('active')) {
                 img.classList.remove('active');
             }
         });
@@ -417,6 +417,7 @@
         let currentIndex = 0;
         function moveSlide(direction) {
             const track = document.getElementById('carouselTrack');
+            if (!track) return;
             const slides = track.children;
             currentIndex = (currentIndex + direction + slides.length) % slides.length;
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -424,7 +425,18 @@
         setInterval(() => {
             moveSlide(1);
         }, 2500);
-    </script>
 
+        // 手机端目录快捷切换板块功能
+        function switchMobileTab(sectionId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active-tab'));
+            
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active-tab');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
