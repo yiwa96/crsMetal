@@ -276,80 +276,68 @@
         background: #EB7100; /* 点击时变橙色 */
     }
 }
-        /* 默认电脑端：隐藏手机专属类 */
-.social-inline-mobile {
+/* 默认电脑端：隐藏手机专属类，确保电脑端完美原样保留 */
+.cert-row-mobile {
     display: none;
 }
 
 /* 仅在手机端（屏幕小于 768px）生效 */
 @media (max-width: 768px) {
-    /* 1. 隐藏电脑端原本独立的 Facebook 图标 */
-    .desktop-social {
-        display: none !important;
-    }
-    /* 显示紧跟在邮箱右边的 Facebook 图标 */
-    .social-inline-mobile {
-        display: inline-flex !important;
-        align-items: center;
-    }
-
-    /* 2. 让整个 Header 在手机端变成常驻悬浮在最顶部 */
-    header {
+    /* 1. 让 Main Header 在手机端常驻悬浮在最顶部（Top Bar 留在原位不随之移动） */
+    .main-header {
         position: sticky;
         top: 0;
         z-index: 99999;
         background: #ffffff;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    /* 3. 主标题保持一行，公司名缩小一点点防止在手机挤压分行，证书移到下方 */
-    .main-header {
         padding: 10px 15px !important;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
+    /* 2. 让 Logo 和公司名靠得很近，不留大空隙 */
     .logo-area {
-        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo-area h1 {
-        font-size: 17px !important; /* 确保在手机上完美排成一行不换行 */
-        white-space: nowrap;
+        gap: 8px !important; /* 缩短 Logo 与公司名的距离 */
     }
 
     .logo-area img {
-        width: 45px !important;
+        width: 38px !important; /* 手机上 Logo 的合适大小 */
     }
 
-    /* 证书图片和三条线在第二行 */
+    .logo-area h1 {
+        font-size: 16px !important; /* 确保公司名在一行且不换行 */
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    /* 3. 让右侧证书和三条线区域支持换行，并把证书撑到公司名下方 */
     .header-right-area {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-top: 1px solid #eee;
+        margin-top: 6px;
+        border-top: 1px solid #f0f0f0;
         padding-top: 6px;
     }
 
     .header-cert-img {
-        height: 38px !important; /* 放在下方时调整合适大小 */
+        height: 32px !important; /* 证书在手机上的高度 */
     }
 
-    /* 4. 将三条线按钮内嵌在 Header 右侧一起悬浮 */
+    /* 4. 手机端常驻悬浮的三条线按钮样式 */
     .floating-hamburger-btn {
         display: flex !important;
         flex-direction: column;
         justify-content: space-between;
-        width: 28px;
-        height: 22px;
-        background: var(--primary);
-        padding: 5px;
+        width: 26px;
+        height: 20px;
+        background: var(--primary, #062A60);
+        padding: 4px;
         border-radius: 4px;
         cursor: pointer;
     }
