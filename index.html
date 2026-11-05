@@ -172,48 +172,136 @@
             .service-item-grid { grid-template-columns: 1fr; }
             .carousel-slide img { height: 300px; }
         }
-/* 默认电脑端：隐藏手机专属的顶部快捷目录 */
-.mobile-top-jump-nav {
-  display: none;
+/* 默认电脑端：彻底隐藏三条线和侧边抽屉菜单 */
+.menu-checkbox, .floating-hamburger-btn, .mobile-side-drawer {
+    display: none;
 }
 
-/* 手机端屏幕（小于 768px）时生效 */
+/* 仅在手机端屏幕（小于 768px）时生效 */
 @media (max-width: 768px) {
-  .mobile-top-jump-nav {
-    display: flex;
-    position: sticky;
-    top: 0;
-    background: #062A60; /* 主题深蓝色 */
-    z-index: 9999;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px 15px;
-    gap: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  .mobile-top-jump-nav a {
-    color: #ffffff;
-    background: rgba(255,255,255,0.15);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .mobile-top-jump-nav a:hover {
-    background: #EB7100; /* 悬停变橙色 */
-  }
+    /* 隐藏之前旧的顶部导航 */
+    .mobile-top-jump-nav {
+        display: none !important;
+    }
+
+    /* 隐藏复选框本身 */
+    .menu-checkbox {
+        display: none;
+    }
+
+    /* 右上角常驻的三条线悬浮按钮（永远在右手边，随页面滚动悬浮） */
+    .floating-hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 32px;
+        height: 26px;
+        background: rgba(6, 42, 96, 0.9); /* 深蓝色背景带一点透明 */
+        padding: 6px;
+        border-radius: 4px;
+        z-index: 99999;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .floating-hamburger-btn span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 2px;
+    }
+
+    /* 侧边抽屉菜单（默认藏在屏幕右侧外面） */
+    .mobile-side-drawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -280px; /* 初始在屏幕右侧外 */
+        width: 260px;
+        height: 100%;
+        background: #062A60;
+        z-index: 100000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        transition: right 0.3s ease-in-out;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* 当勾选框被点中时，抽屉滑入屏幕 */
+    #mobile-menu-toggle:checked ~ .mobile-side-drawer {
+        right: 0;
+    }
+
+    .drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .drawer-header h3 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .drawer-close {
+        color: #ffffff;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .drawer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .drawer-links a {
+        color: #ffffff;
+        font-size: 16px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        background: rgba(255,255,255,0.08);
+        transition: background 0.2s;
+    }
+
+    .drawer-links a:hover {
+        background: #EB7100; /* 点击时变橙色 */
+    }
 }
     </style>
 </head>
 <body id="home">
-<!-- 仅在手机端显示的顶部快捷跳转目录 -->
-<div class="mobile-top-jump-nav">
-  <a href="#home">Home</a>
-  <a href="#about">About Us</a>
-  <a href="#what-we-do">What We Do</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</div>
+
+    <!-- 1. 手机端专属：常驻在右手边的“三条线”悬浮按钮 -->
+    <input type="checkbox" id="mobile-menu-toggle" class="menu-checkbox">
+    <label for="mobile-menu-toggle" class="floating-hamburger-btn" title="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- 2. 手机端专属：点击三条线后弹出的侧边全屏目录 -->
+    <nav class="mobile-side-drawer">
+        <div class="drawer-header">
+            <h3>Menu</h3>
+            <label for="mobile-menu-toggle" class="drawer-close">&times;</label>
+        </div>
+        <div class="drawer-links">
+            <a href="#home" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Home</a>
+            <a href="#about" onclick="document.getElementById('mobile-menu-toggle').checked = false;">About Us</a>
+            <a href="#what-we-do" onclick="document.getElementById('mobile-menu-toggle').checked = false;">What We Do</a>
+            <a href="#projects" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Latest Projects</a>
+            <a href="#contact" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Contact Us</a>
+        </div>
+    </nav>
     <header>
         <div class="top-bar">
             <div class="top-bar-left">
