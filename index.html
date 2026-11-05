@@ -159,31 +159,47 @@
             .service-item-grid { grid-template-columns: 1fr; }
             .carousel-slide img { height: 300px; }
 
-            /* 1. Remove the top left navigation bar / top bar items on mobile */
-            .top-bar { display: none !important; }
-
-            /* 3. Adjust floating WhatsApp position much further to the left so it's fully seen */
+            /* 2. Move WhatsApp floating button much further to the left */
             .floating-whatsapp {
-                right: 35px !important;
-                bottom: 30px !important;
+                right: 45px !important;
+                bottom: 35px !important;
             }
 
-            /* 2. Adjust ISO cert in hero section further to the left */
+            /* 2 (from previous instruction): ISO cert in hero section shifted further left */
             .hero-content img[alt="ISO Certification"] {
                 position: relative;
                 left: -35px !important;
             }
 
-            /* 4. Make header sticky/fixed so it scrolls with the user */
+            /* 3 & 4. Make header sticky/fixed permanently during both scrolling up and down */
             header {
                 position: sticky;
                 top: 0;
                 z-index: 9999;
+                background: var(--light-color);
+            }
+
+            /* 1. Mobile Top bar display fix so contact elements don't disappear */
+            .top-bar {
+                display: flex !important;
+                padding: 6px 10px !important;
+                font-size: 11px !important;
+            }
+            .top-bar-left {
+                gap: 12px !important;
+            }
+            .top-bar-item svg {
+                width: 12px !important;
+                height: 12px !important;
+            }
+            .social-inline-mobile img {
+                width: 16px !important;
+                height: 16px !important;
             }
 
             .main-header {
                 position: relative !important;
-                padding: 10px 15px !important;
+                padding: 8px 12px !important;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -196,31 +212,31 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 4px;
+                gap: 2px;
                 flex: 1;
             }
 
             .logo-area {
                 display: flex;
                 align-items: center;
-                gap: 8px !important;
+                gap: 6px !important;
             }
-            .logo-area img { width: 36px !important; }
+            .logo-area img { width: 32px !important; }
             .logo-area h1 {
-                font-size: 14px !important;
+                font-size: 13px !important;
                 white-space: nowrap;
                 margin: 0;
             }
 
-            /* Center the cert image block underneath */
+            /* Center cert image block underneath */
             .cert-row-mobile {
                 display: flex !important;
                 justify-content: center !important;
                 width: 100%;
-                margin-top: 4px;
+                margin-top: 2px;
             }
             .cert-row-mobile .header-cert-img {
-                height: 26px !important;
+                height: 22px !important;
                 display: block !important;
             }
 
@@ -231,8 +247,8 @@
                 display: flex !important;
                 flex-direction: column;
                 justify-content: space-between;
-                width: 26px;
-                height: 20px;
+                width: 24px;
+                height: 18px;
                 background: var(--primary, #062A60);
                 padding: 4px;
                 border-radius: 4px;
@@ -326,7 +342,7 @@
                 </span>
                 <span class="top-bar-item social-inline-mobile">
                     <a href="https://www.facebook.com/p/CRS-METAL-SDN-BHD-100091624826866/" target="_blank" title="Facebook">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
                     </a>
                 </span>
                 <span class="top-bar-item">
@@ -334,6 +350,7 @@
                     <a href="https://wa.me/60193732055" target="_blank">019-373 2055</a>
                 </span>
             </div>
+            <!-- Desktop social icon only (fixed duplicate icon issue) -->
             <div class="social-icons desktop-social">
                 <a href="https://www.facebook.com/p/CRS-METAL-SDN-BHD-100091624826866/" target="_blank" title="Facebook">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
@@ -347,18 +364,15 @@
                     <img src="websitelogo.png" alt="CRS Metal Logo">
                     <h1>CRS Metal Sdn.Bhd.</h1>
                 </div>
-                <!-- 手机端证书居中显示 -->
                 <div class="cert-row-mobile">
                     <img src="crsCert.png" alt="CRS Certificate" class="header-cert-img" onclick="toggleCert(event)">
                 </div>
             </div>
             
-            <!-- 电脑端右上角证书 -->
             <div class="header-right-area desktop-social" style="display: flex; align-items: center;">
                 <img src="crsCert.png" alt="CRS Certificate" class="header-cert-img" id="certImg" onclick="toggleCert(event)">
             </div>
 
-            <!-- 手机端常驻悬浮的三条线按钮 -->
             <label for="mobile-menu-toggle" class="floating-hamburger-btn" title="Menu">
                 <span></span>
                 <span></span>
