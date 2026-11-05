@@ -172,10 +172,48 @@
             .service-item-grid { grid-template-columns: 1fr; }
             .carousel-slide img { height: 300px; }
         }
+/* 默认电脑端：隐藏手机专属的顶部快捷目录 */
+.mobile-top-jump-nav {
+  display: none;
+}
+
+/* 手机端屏幕（小于 768px）时生效 */
+@media (max-width: 768px) {
+  .mobile-top-jump-nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: #062A60; /* 主题深蓝色 */
+    z-index: 9999;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 15px;
+    gap: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  .mobile-top-jump-nav a {
+    color: #ffffff;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .mobile-top-jump-nav a:hover {
+    background: #EB7100; /* 悬停变橙色 */
+  }
+}
     </style>
 </head>
 <body id="home">
-
+<!-- 仅在手机端显示的顶部快捷跳转目录 -->
+<div class="mobile-top-jump-nav">
+  <a href="#home">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#what-we-do">What We Do</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
     <header>
         <div class="top-bar">
             <div class="top-bar-left">
