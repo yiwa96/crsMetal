@@ -150,58 +150,52 @@
         @media(max-width: 900px) {
             .service-item-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media(max-width: 768px) {
-            .about-section { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 32px; }
-            .service-item-grid { grid-template-columns: 1fr; }
-            .carousel-slide img { height: 300px; }
-        }
-
-        /* 手机端汉堡菜单与悬浮 Header 样式 */
-        .menu-checkbox, .floating-hamburger-btn, .mobile-side-drawer, .cert-row-mobile, .social-inline-mobile {
-            display: none;
-        }
-
         @media (max-width: 768px) {
-            .desktop-social { display: none !important; }
-            .social-inline-mobile { display: inline-flex !important; align-items: center; }
+    .about-section { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 32px; }
+    .service-item-grid { grid-template-columns: 1fr; }
+    .carousel-slide img { height: 300px; }
 
-            .menu-checkbox { display: none; }
+    .desktop-social { display: none !important; }
+    .social-inline-mobile { display: inline-flex !important; align-items: center; }
 
-            /* 手机端 Main Header 常驻悬浮在最顶部 */
-            .main-header {
-                position: sticky;
-                top: 0;
-                z-index: 99999;
-                background: #ffffff;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                padding: 10px 15px !important;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-            }
+    /* 让 header 正常随页面滚动，不粘在顶部 */
+    .main-header {
+        position: relative !important;
+        padding: 12px 15px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
 
-            .logo-area {
-                display: flex;
-                align-items: center;
-                gap: 8px !important;
-            }
-            .logo-area img { width: 38px !important; }
-            .logo-area h1 {
-                font-size: 16px !important;
-                white-space: nowrap;
-                margin: 0;
-            }
+    /* Logo 和公司名在一行，靠在一起 */
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 8px !important;
+        width: 100%;
+    }
+    .logo-area img { width: 38px !important; }
+    .logo-area h1 {
+        font-size: 16px !important;
+        white-space: nowrap;
+        margin: 0;
+    }
 
-            .cert-row-mobile {
-                display: block !important;
-                width: 100%;
-                margin-top: 6px;
-                border-top: 1px solid #f0f0f0;
-                padding-top: 6px;
-            }
-            .header-cert-img { height: 32px !important; }
+    /* 把证书严格排列在公司名称的下方 */
+    .cert-row-mobile {
+        display: block !important;
+        width: 100%;
+        margin-top: 2px;
+        padding-top: 4px;
+        border-top: 1px solid #f0f0f0;
+    }
+    .cert-row-mobile .header-cert-img {
+        height: 32px !important;
+        display: block !important;
+    }
+}
 
             .floating-hamburger-btn {
                 display: flex !important;
@@ -261,29 +255,6 @@
     </style>
 </head>
 <body id="home">
-
-    <!-- 1. 手机端侧边全屏目录与三条线开关 -->
-    <input type="checkbox" id="mobile-menu-toggle" class="menu-checkbox">
-    <label for="mobile-menu-toggle" class="floating-hamburger-btn" title="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
-
-    <nav class="mobile-side-drawer">
-        <div class="drawer-header">
-            <h3>Menu</h3>
-            <label for="mobile-menu-toggle" class="drawer-close">&times;</label>
-        </div>
-        <div class="drawer-links">
-            <a href="#home" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Home</a>
-            <a href="#about" onclick="document.getElementById('mobile-menu-toggle').checked = false;">About Us</a>
-            <a href="#what-we-do" onclick="document.getElementById('mobile-menu-toggle').checked = false;">What We Do</a>
-            <a href="#projects" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Latest Projects</a>
-            <a href="#contact" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Contact Us</a>
-        </div>
-    </nav>
-
     <header>
         <div class="top-bar">
             <div class="top-bar-left">
